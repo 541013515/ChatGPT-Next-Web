@@ -10,7 +10,7 @@ const jp = {
     ChatItemCount: (count: number) => `${count} 通のチャット`,
   },
   Chat: {
-    SubTitle: (count: number) => `ChatGPTとの ${count} 通のチャット`,
+    SubTitle: (count: number) => `AI との ${count} 通のチャット`,
     Actions: {
       ChatList: "メッセージリストを表示",
       CompressedHistory: "圧縮された履歴プロンプトを表示",
@@ -51,6 +51,8 @@ const jp = {
     DeleteChat: "選択したチャットを削除してもよろしいですか？",
     DeleteToast: "チャットが削除されました",
     Revert: "元に戻す",
+    Title: "AI アシスタント",
+    Description: "あなた専用の AI アシスタントを作成する",
   },
   Settings: {
     Title: "設定",
@@ -149,6 +151,11 @@ const jp = {
       Title: "トピックの新鮮度 (presence_penalty)",
       SubTitle: "値が大きいほど、新しいトピックへの展開が可能になります。",
     },
+    Contact: {
+      Title: "私に連絡してください",
+      SubTitle: "ウェブサイトのカスタマイズについては、私にご連絡ください",
+    },
+    WeChat: "WeChat公式アカウント",
   },
   Store: {
     DefaultTopic: "新しいチャット",

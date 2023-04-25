@@ -28,7 +28,7 @@ import { Avatar } from "./chat";
 import Locale, { AllLangs, changeLang, getLang } from "../locales";
 import { getEmojiUrl } from "../utils";
 import Link from "next/link";
-import { UPDATE_URL } from "../constant";
+import { UPDATE_URL, WeChat_URL } from "../constant";
 import { SearchService, usePromptStore } from "../store/prompt";
 import { requestUsage } from "../requests";
 import { ErrorBoundary } from "./error";
@@ -223,7 +223,7 @@ export function Settings(props: { closeSettings: () => void }) {
             </Popover>
           </SettingItem>
 
-          <SettingItem
+          {/* <SettingItem
             title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
             subTitle={
               checkingUpdate
@@ -246,7 +246,7 @@ export function Settings(props: { closeSettings: () => void }) {
                 onClick={() => checkUpdate(true)}
               />
             )}
-          </SettingItem>
+          </SettingItem> */}
 
           <SettingItem title={Locale.Settings.SendKey}>
             <select
@@ -362,22 +362,20 @@ export function Settings(props: { closeSettings: () => void }) {
               />
             </SettingItem>
           ) : (
-            <></>
+            <SettingItem
+              title={Locale.Settings.Token.Title}
+              subTitle={Locale.Settings.Token.SubTitle}
+            >
+              <PasswordInput
+                value={accessStore.token}
+                type="text"
+                placeholder={Locale.Settings.Token.Placeholder}
+                onChange={(e) => {
+                  accessStore.updateToken(e.currentTarget.value);
+                }}
+              />
+            </SettingItem>
           )}
-
-          <SettingItem
-            title={Locale.Settings.Token.Title}
-            subTitle={Locale.Settings.Token.SubTitle}
-          >
-            <PasswordInput
-              value={accessStore.token}
-              type="text"
-              placeholder={Locale.Settings.Token.Placeholder}
-              onChange={(e) => {
-                accessStore.updateToken(e.currentTarget.value);
-              }}
-            />
-          </SettingItem>
 
           <SettingItem
             title={Locale.Settings.Usage.Title}
@@ -553,6 +551,16 @@ export function Settings(props: { closeSettings: () => void }) {
                 );
               }}
             ></InputRange>
+          </SettingItem>
+        </List>
+        <List>
+          <SettingItem
+            title={Locale.Settings.Contact.Title}
+            subTitle={Locale.Settings.Contact.SubTitle}
+          >
+            <Link href={WeChat_URL} target="_blank" className="link">
+              {Locale.Settings.WeChat}
+            </Link>
           </SettingItem>
         </List>
       </div>

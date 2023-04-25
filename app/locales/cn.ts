@@ -9,7 +9,7 @@ const cn = {
     ChatItemCount: (count: number) => `${count} 条对话`,
   },
   Chat: {
-    SubTitle: (count: number) => `与 ChatGPT 的 ${count} 条对话`,
+    SubTitle: (count: number) => `与 AI 的 ${count} 条对话`,
     Actions: {
       ChatList: "查看消息列表",
       CompressedHistory: "查看压缩后的历史 Prompt",
@@ -49,6 +49,8 @@ const cn = {
     DeleteChat: "确认删除选中的对话？",
     DeleteToast: "已删除会话",
     Revert: "撤销",
+    Title: "AI 助手",
+    Description: "打造你专属的 AI 助手",
   },
   Settings: {
     Title: "设置",
@@ -144,6 +146,11 @@ const cn = {
       Title: "话题新鲜度 (presence_penalty)",
       SubTitle: "值越大，越有可能扩展到新话题",
     },
+    Contact: {
+      Title: "联系我",
+      SubTitle: "需要定制网站请联系我",
+    },
+    WeChat: "微信公众号",
   },
   Store: {
     DefaultTopic: "新的聊天",

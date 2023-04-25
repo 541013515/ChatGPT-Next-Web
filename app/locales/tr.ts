@@ -11,7 +11,7 @@ const tr: LocaleType = {
     ChatItemCount: (count: number) => `${count} mesaj`,
   },
   Chat: {
-    SubTitle: (count: number) => `ChatGPT tarafından ${count} mesaj`,
+    SubTitle: (count: number) => `AI tarafından ${count} mesaj`,
     Actions: {
       ChatList: "Sohbet Listesine Git",
       CompressedHistory: "Sıkıştırılmış Geçmiş Bellek Komutu",
@@ -52,6 +52,8 @@ const tr: LocaleType = {
     DeleteChat: "Seçili sohbeti silmeyi onaylıyor musunuz?",
     DeleteToast: "Sohbet Silindi",
     Revert: "Geri Al",
+    Title: "Yapay Zeka Asistanı",
+    Description: "Kendi özel AI Asistanınızı oluşturun",
   },
   Settings: {
     Title: "Ayarlar",
@@ -150,6 +152,11 @@ const tr: LocaleType = {
       SubTitle:
         "Daha büyük bir değer, yeni konular hakkında konuşma olasılığını artırır",
     },
+    Contact: {
+      Title: "Benimle iletişime geçin",
+      SubTitle: "Özel bir web sitesi ihtiyacınız varsa benimle iletişime geçin",
+    },
+    WeChat: "WeChat Resmi Hesabı",
   },
   Store: {
     DefaultTopic: "Yeni Konuşma",

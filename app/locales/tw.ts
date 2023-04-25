@@ -10,7 +10,7 @@ const tw: LocaleType = {
     ChatItemCount: (count: number) => `${count} 條對話`,
   },
   Chat: {
-    SubTitle: (count: number) => `您已經與 ChatGPT 進行了 ${count} 條對話`,
+    SubTitle: (count: number) => `您已經與 AI 進行了 ${count} 條對話`,
     Actions: {
       ChatList: "查看消息列表",
       CompressedHistory: "查看壓縮後的歷史 Prompt",
@@ -50,6 +50,8 @@ const tw: LocaleType = {
     DeleteChat: "確定要刪除選取的對話嗎？",
     DeleteToast: "已刪除對話",
     Revert: "撤銷",
+    Title: "人工智慧助手",
+    Description: "打造屬於您的 AI助手",
   },
   Settings: {
     Title: "設定",
@@ -144,6 +146,11 @@ const tw: LocaleType = {
       Title: "話題新穎度 (presence_penalty)",
       SubTitle: "值越大，越有可能擴展到新話題",
     },
+    Contact: {
+      Title: "聯繫我",
+      SubTitle: "如需定制網站，請聯繫我",
+    },
+    WeChat: "微信公眾號",
   },
   Store: {
     DefaultTopic: "新的對話",

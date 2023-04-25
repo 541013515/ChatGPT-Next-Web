@@ -11,7 +11,7 @@ const it: LocaleType = {
     ChatItemCount: (count: number) => `${count} messaggi`,
   },
   Chat: {
-    SubTitle: (count: number) => `${count} messaggi con ChatGPT`,
+    SubTitle: (count: number) => `${count} messaggi con AI`,
     Actions: {
       ChatList: "Vai alla Chat List",
       CompressedHistory: "Prompt di memoria della cronologia compressa",
@@ -52,6 +52,8 @@ const it: LocaleType = {
     DeleteChat: "Confermare la cancellazione della conversazione selezionata?",
     DeleteToast: "Chat Deleted",
     Revert: "Revert",
+    Title: "assistente di intelligenza artificiale",
+    Description: "Creare il tuo assistente AI personalizzato",
   },
   Settings: {
     Title: "Impostazioni",
@@ -149,6 +151,11 @@ const it: LocaleType = {
       SubTitle:
         "Un valore maggiore aumenta la probabilità di parlare di nuovi argomenti",
     },
+    Contact: {
+      Title: "Contattami",
+      SubTitle: "Se hai bisogno di un sito web personalizzato, contattami",
+    },
+    WeChat: "Account Ufficiale di WeChat",
   },
   Store: {
     DefaultTopic: "Nuova conversazione",
