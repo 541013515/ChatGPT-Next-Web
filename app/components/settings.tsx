@@ -10,8 +10,10 @@ import ClearIcon from "../icons/clear.svg";
 import EditIcon from "../icons/edit.svg";
 import EyeIcon from "../icons/eye.svg";
 import EyeOffIcon from "../icons/eye-off.svg";
+import GithubIcon from "../icons/github.svg";
+import QRImage from "../icons/qrimage.png";
 
-import { List, ListItem, Popover, showToast } from "./ui-lib";
+import { List, ListItem, Popover, showToast, showModal } from "./ui-lib";
 
 import { IconButton } from "./button";
 import {
@@ -91,6 +93,29 @@ export function Settings(props: { closeSettings: () => void }) {
   const currentVersion = updateStore.version;
   const remoteId = updateStore.remoteVersion;
   const hasNewVersion = currentVersion !== remoteId;
+  const [showImage, setShowImage] = useState(false);
+
+  function showMessages() {
+    showModal({
+      title: Locale.Settings.WeChat,
+      children: (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+          }}
+        >
+          <img
+            style={{ width: "30%", textAlign: "center" }}
+            src={QRImage.src}
+            alt="placeholder"
+          />
+        </div>
+      ),
+    });
+  }
 
   function checkUpdate(force = false) {
     setCheckingUpdate(true);
@@ -558,9 +583,14 @@ export function Settings(props: { closeSettings: () => void }) {
             title={Locale.Settings.Contact.Title}
             subTitle={Locale.Settings.Contact.SubTitle}
           >
-            <Link href={WeChat_URL} target="_blank" className="link">
-              {Locale.Settings.WeChat}
-            </Link>
+            <IconButton
+              icon={<GithubIcon />}
+              bordered
+              title={Locale.Settings.WeChat}
+              onClick={() => {
+                showMessages();
+              }}
+            />
           </SettingItem>
         </List>
       </div>
