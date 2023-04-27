@@ -11,6 +11,7 @@ import { isMobileScreen, trimTopic } from "../utils";
 
 import Locale from "../locales";
 import { showToast } from "../components/ui-lib";
+import tr from "../locales/tr";
 
 export type Message = ChatCompletionResponseMessage & {
   date: string;
@@ -378,10 +379,10 @@ export const useChatStore = create<ChatStore>()(
       },
 
       async onUserInput(content) {
-        // const systemMessage: Message = createMessage({
-        //   role: "system",
-        //   conLocale.Store.RootTopic,
-        // });
+        const systemMessage: Message = createMessage({
+          role: "system",
+          content: Locale.Store.RootTopic,
+        });
         const userMessage: Message = createMessage({
           role: "user",
           content,
@@ -392,25 +393,24 @@ export const useChatStore = create<ChatStore>()(
           streaming: true,
         });
 
+        let recentMessages;
         console.log("[currentSessionIndex] ", get().currentSessionIndex);
         if (get().currentSessionIndex == 0) {
-          get().updateCurrentSession((session) => {
-            session.context.push({
-              role: "system",
-              content: Locale.Store.RootTopic,
-              date: "",
-            });
-          });
+          recentMessages = [systemMessage];
+        } else {
+          // get recent messages
+          recentMessages = get().getMessagesWithMemory();
         }
 
-        // get recent messages
-        const recentMessages = get().getMessagesWithMemory();
         const sendMessages = recentMessages.concat(userMessage);
         const sessionIndex = get().currentSessionIndex;
         const messageIndex = get().currentSession().messages.length + 1;
 
         // save user's and bot's message
         get().updateCurrentSession((session) => {
+          if (get().currentSessionIndex == 0) {
+            session.messages.push(systemMessage);
+          }
           session.messages.push(userMessage);
           session.messages.push(botMessage);
         });
