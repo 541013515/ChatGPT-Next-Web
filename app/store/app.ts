@@ -482,9 +482,13 @@ export const useChatStore = create<ChatStore>()(
           context.push(memoryPrompt);
         }
 
-        const recentMessages = context.concat(
+        let recentMessages = context.concat(
           messages.slice(Math.max(0, n - config.historyMessageCount)),
         );
+
+        if (n > config.historyMessageCount) {
+          recentMessages.unshift(messages[0]);
+        }
 
         return recentMessages;
       },
