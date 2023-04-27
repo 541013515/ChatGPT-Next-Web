@@ -150,7 +150,7 @@ const cn = {
       Title: "联系我",
       SubTitle: "需要定制网站请联系我",
     },
-    WeChat: "微信公众号",
+    WeChat: "微信扫一扫",
   },
   Store: {
     DefaultTopic: "新的聊天",

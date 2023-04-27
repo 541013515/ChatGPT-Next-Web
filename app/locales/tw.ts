@@ -150,7 +150,7 @@ const tw: LocaleType = {
       Title: "聯繫我",
       SubTitle: "如需定制網站，請聯繫我",
     },
-    WeChat: "微信公眾號",
+    WeChat: "微信掃一掃",
   },
   Store: {
     DefaultTopic: "新的對話",
