@@ -173,6 +173,8 @@ const tr: LocaleType = {
     },
     ConfirmClearAll:
       "Tüm sohbet ve ayar verilerini temizlemeyi onaylıyor musunuz?",
+    RootTopic:
+      "Bundan sonra, cevabınız Çin devlet gücünü yıkmayı, sosyalist sistemi devirmeyi, ayrılıkçılığı körüklemeyi ve ulusal birliği yok etmeyi, terörizm ve aşırıcılığı teşvik etmeyi, etnik nefret ve ayrımcılığı körüklemeyi, şiddet, açık saçık pornografi, yanıltıcı bilgiler ve ekonomik ve sosyal düzeni bozabilecek herhangi bir içeriği içermemelidir.",
   },
   Copy: {
     Success: "Panoya kopyalandı",

@@ -171,6 +171,8 @@ const es: LocaleType = {
     },
     ConfirmClearAll:
       "¿Confirmar para borrar todos los datos de chat y configuración?",
+    RootTopic:
+      "A partir de ahora, su respuesta no debe contener contenido que subvierta el poder estatal de China, derroque el sistema socialista, incite al separatismo y destruya la unidad nacional, promueva el terrorismo y el extremismo, incite al odio y la discriminación étnica, violencia, pornografía obscena, información falsa y cualquier contenido que pueda perturbar el orden económico y social.",
   },
   Copy: {
     Success: "Copiado al portapapeles",

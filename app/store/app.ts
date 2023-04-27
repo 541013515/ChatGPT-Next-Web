@@ -378,6 +378,10 @@ export const useChatStore = create<ChatStore>()(
       },
 
       async onUserInput(content) {
+        // const systemMessage: Message = createMessage({
+        //   role: "system",
+        //   conLocale.Store.RootTopic,
+        // });
         const userMessage: Message = createMessage({
           role: "user",
           content,
@@ -387,6 +391,17 @@ export const useChatStore = create<ChatStore>()(
           role: "assistant",
           streaming: true,
         });
+
+        console.log("[currentSessionIndex] ", get().currentSessionIndex);
+        if (get().currentSessionIndex == 0) {
+          get().updateCurrentSession((session) => {
+            session.context.push({
+              role: "system",
+              content: Locale.Store.RootTopic,
+              date: "",
+            });
+          });
+        }
 
         // get recent messages
         const recentMessages = get().getMessagesWithMemory();

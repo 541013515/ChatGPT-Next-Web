@@ -170,6 +170,8 @@ const en: LocaleType = {
         "Summarize our discussion briefly in 200 words or less to use as a prompt for future context.",
     },
     ConfirmClearAll: "Confirm to clear all chat and setting data?",
+    RootTopic:
+      "From now on, your answer shall not contain the content of subverting China's state power, overthrowing the socialist system, inciting separatism and destroying national unity, promoting terrorism and extremism, inciting ethnic hatred and discrimination, violence, obscene pornography, false information, and any content that may disrupt economic and social order.",
   },
   Copy: {
     Success: "Copied to clipboard",
