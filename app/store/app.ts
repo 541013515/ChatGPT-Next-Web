@@ -393,24 +393,21 @@ export const useChatStore = create<ChatStore>()(
           streaming: true,
         });
 
-        let recentMessages;
-        console.log("[currentSessionIndex] ", get().currentSessionIndex);
-        if (get().currentSessionIndex == 0) {
-          recentMessages = [systemMessage];
-        } else {
-          // get recent messages
-          recentMessages = get().getMessagesWithMemory();
+        // get recent messages
+        let recentMessages = get().getMessagesWithMemory();
+        console.log("[recentMessages] ", recentMessages);
+        if (recentMessages.length == 0) {
+          recentMessages = recentMessages.concat(systemMessage);
+          get().updateCurrentSession((session) => {
+            session.messages.push(systemMessage);
+          });
         }
-
         const sendMessages = recentMessages.concat(userMessage);
         const sessionIndex = get().currentSessionIndex;
         const messageIndex = get().currentSession().messages.length + 1;
 
         // save user's and bot's message
         get().updateCurrentSession((session) => {
-          if (get().currentSessionIndex == 0) {
-            session.messages.push(systemMessage);
-          }
           session.messages.push(userMessage);
           session.messages.push(botMessage);
         });
