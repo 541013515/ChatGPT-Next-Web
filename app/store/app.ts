@@ -395,7 +395,6 @@ export const useChatStore = create<ChatStore>()(
 
         // get recent messages
         let recentMessages = get().getMessagesWithMemory();
-        console.log("[recentMessages] ", recentMessages);
         if (recentMessages.length == 0) {
           recentMessages = recentMessages.concat(systemMessage);
           get().updateCurrentSession((session) => {
