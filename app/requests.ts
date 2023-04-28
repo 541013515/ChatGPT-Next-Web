@@ -141,7 +141,7 @@ export async function requestChatStream(
   const reqTimeoutId = setTimeout(() => controller.abort(), TIME_OUT_MS);
 
   try {
-    const res = await fetch("/api/chat-stream", {
+    const res = await fetch("https://chat.xmn-lv.cn/api/chat-stream", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -171,11 +171,11 @@ export async function requestChatStream(
         const resTimeoutId = setTimeout(() => finish(), TIME_OUT_MS);
         const content = await reader?.read();
         clearTimeout(resTimeoutId);
-      
+
         if (!content || !content.value) {
           break;
         }
-      
+
         const text = decoder.decode(content.value, { stream: true });
         responseText += text;
 
