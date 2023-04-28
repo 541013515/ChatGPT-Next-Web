@@ -141,11 +141,10 @@ export async function requestChatStream(
   const reqTimeoutId = setTimeout(() => controller.abort(), TIME_OUT_MS);
 
   try {
-    const res = await fetch("https://chat.xmn-lv.cn/api/chat-stream", {
+    const res = await fetch("/api/chat-stream", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
         path: "v1/chat/completions",
         ...getHeaders(),
       },
