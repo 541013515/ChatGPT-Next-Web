@@ -145,6 +145,7 @@ export async function requestChatStream(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
         path: "v1/chat/completions",
         ...getHeaders(),
       },
