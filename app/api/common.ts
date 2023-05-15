@@ -9,7 +9,7 @@ export async function requestOpenai(req: NextRequest) {
   const apiKey = req.headers.get("token");
   const openaiPath = req.headers.get("path");
 
-  console.log("[Proxy] ", openaiPath);
+  console.log("[RequestOpenai] ", openaiPath);
 
   return fetch(`${PROTOCOL}://${BASE_URL}/${openaiPath}`, {
     headers: {
@@ -19,4 +19,21 @@ export async function requestOpenai(req: NextRequest) {
     method: req.method,
     body: req.body,
   });
+}
+
+export async function proxyOpenai(req: NextRequest) {
+  const url = "https://chat.xmn-lv.cn/api/chat-stream";
+  console.log("[ProxyOpenai] ", url);
+
+  const options = {
+    method: req.method,
+    body: req.body,
+    headers: {
+      "access-code": "xmn",
+      path: "v1/chat/completions",
+      "Content-Type": "application/json",
+    },
+  };
+
+  return fetch(url, options);
 }
