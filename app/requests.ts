@@ -80,10 +80,10 @@ export async function requestUsage() {
       .getDate()
       .toString()
       .padStart(2, "0")}`;
-  const ONE_DAY = 2 * 24 * 60 * 60 * 1000;
-  const now = new Date(Date.now() + ONE_DAY);
+  const ONE_DAY = 24 * 60 * 60 * 1000;
+  const now = new Date(Date.now());
   // const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-  const startOfDateRange = new Date(now.getTime() - ONE_DAY * 99);
+  const startOfDateRange = new Date(Date.now() - ONE_DAY * 99);
   const startDate = formatDate(startOfDateRange);
   const endDate = formatDate(now);
 
