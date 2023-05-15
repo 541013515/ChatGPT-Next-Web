@@ -81,9 +81,10 @@ export async function requestUsage() {
       .toString()
       .padStart(2, "0")}`;
   const ONE_DAY = 2 * 24 * 60 * 60 * 1000;
-  const now = new Date(Date.now() - ONE_DAY * 99);
-  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-  const startDate = formatDate(startOfMonth);
+  const now = new Date(Date.now() + ONE_DAY);
+  // const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+  const startOfDateRange = new Date(now.getTime() - ONE_DAY * 99);
+  const startDate = formatDate(startOfDateRange);
   const endDate = formatDate(now);
 
   const [used, subs] = await Promise.all([
